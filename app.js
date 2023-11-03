@@ -6,11 +6,25 @@ var logger = require("morgan");
 const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
+require("dotenv").config();
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 var app = express();
+
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
+
+const dev_db_url = `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.fqbeltr.mongodb.net/membersonly?retryWrites=true&w=majority`;
+
+const mongoDB = dev_db_url;
+//process.env.MONGODB_URI
+
+main().catch((err) => console.log(err));
+async function main() {
+  await mongoose.connect(mongoDB);
+}
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
