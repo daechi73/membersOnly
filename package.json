@@ -8,6 +8,8 @@
     "serverstart": "DEBUG=express-locallibrary-tutorial:* npm run devstart"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.2",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.3.1",
@@ -23,6 +25,7 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "luxon": "^3.4.3",
     "nodemon": "^3.0.1"
   }
 }
