@@ -7,7 +7,9 @@ exports.profile = asyncHandler(async (req, res, next) => {
 });
 
 exports.sign_in_get = asyncHandler(async (req, res, next) => {
-  res.render("sign-in-get");
+  res.render("sign-in-get", {
+    title: "Sign-in",
+  });
 });
 exports.sign_in_post = asyncHandler(async (req, res, next) => {
   res.send("sign_in not implemented yet");
