@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 console.log("This script populates Users and comments to the database");
-
+//mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.fqbeltr.mongodb.net/membersOnly?retryWrites=true&w=majority
 // Get arguments passed on command line
 const userArgs = process.argv.slice(2);
 
@@ -44,6 +44,7 @@ async function userCreate(
     date_created: date_created,
     user_name: user_name,
     password: await hashedPass2(password),
+    //password: password,          // for no bcrypt
     status: status,
   });
   await user.save();

@@ -10,7 +10,8 @@ html
     block head 
       div.navbar.navbar-expand-lg.navbar-light.bg-light
         if user
-          h1 Members Only Club! #[a Log-out]  
+          div.navbar-brand Members Only Club!
+           a.sign-out(href="/user/sign-out") Sign-out
         else
             div.navbar-brand Members Only Club! 
             a.sign-in(href="/user/sign-in") Sign-in

@@ -4,10 +4,10 @@ block content
 
     h1=title 
 
-    form(method="POST" action="")
+    form(method="POST" action="/user/signed-in")
         .form-group
           label(for="user_name") User Name: 
-          input(type="text" placeholder="Your username.." name="user_name" required=true)
+          input(type="text" placeholder="Your username.." name="username" required=true)
         .form-group 
           label(for="password") Password: 
           input(type="text" placeholder="Your password.." name="password" required=true)
