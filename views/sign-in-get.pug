@@ -7,15 +7,14 @@ block content
     form(method="POST" action="/user/signed-in")
         .form-group
           label(for="username") User Name: 
-          input(type="text" placeholder="Your username.." name="username" required=true)
-        .form-group 
+          input#username.form-control(type="text" placeholder="Your username.." name="username" required=true)
+        .form-group
           label(for="password") Password: 
-          input(type="text" placeholder="Your password.." name="password" required=true)
-        button.sign-in-btn(type="submit") Submit
+          input#password.form-control(type="password" placeholder="Your password.." name="password" required=true)
+        button.btn.btn-primary(type="submit") Submit
     
     p 
       a(href="/user/sign-up") Sign-up
-
+ 
     if errors 
-        li.authErrorMsg!=errors
-            
+      p You have entered a wrong username/password.
