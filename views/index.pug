@@ -6,14 +6,32 @@ block content
 
   div.comment-list
     p=title
-    if user   
-      p #{user.user_name}
+    if signedInUser   
+      p #{signedInUser.user_name}
+      p #{signedInUser.status}
     dl.comments
       each comment in comments 
         dd.commentComment #{comment.comment}
         dt.commentInfo 
-          a(href=comment.user.url) #{comment.user.user_name} 
-          p #{comment.date_added_formatted}
-        
+          if signedInUser 
+            if (signedInUser.status === "member" || signedInUser.status === "VIP")
+              div.commentInfo_userName
+                p Author: #[a(href=comment.user.url) #{comment.user.user_name}]  
+            else 
+              div.commentInfo_userName
+                p Author:Hidden    
+              div.commentInfo_datePublished
+                p #{comment.date_added_formatted}
+          else
+            div.commentInfo_userName
+              p Author: Hidden   
+            div.commentInfo_datePublished
+          p Date published: #{comment.date_added_formatted}
+          
+
+
+
+            
+
            
   
