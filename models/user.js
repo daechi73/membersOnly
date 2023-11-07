@@ -11,9 +11,10 @@ const UserSchema = new Schema({
   status: {
     type: String,
     required: true,
-    enum: ["Starter", "Intermediate", "VIP"],
+    enum: ["WannaBe", "Member", "VIP"],
     default: "Starter",
   },
+  admin: { type: Boolean, default: false },
 });
 
 UserSchema.virtual("url").get(function () {

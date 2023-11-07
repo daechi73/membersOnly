@@ -36,7 +36,8 @@ async function userCreate(
   date_created,
   user_name,
   password,
-  status
+  status,
+  admin
 ) {
   const user = new User({
     first_name: first_name,
@@ -46,6 +47,7 @@ async function userCreate(
     password: await hashedPass2(password),
     //password: password,          // for no bcrypt
     status: status,
+    admin: admin,
   });
   await user.save();
   users[index] = user;
@@ -86,7 +88,7 @@ async function createUsers() {
       "2023-10-20",
       "JH34@hotmail.com",
       "123456789",
-      "Starter"
+      "WannaBe"
     ),
 
     userCreate(
@@ -96,7 +98,7 @@ async function createUsers() {
       "2023-10-21",
       "MB124@hotmail.com",
       "123456789",
-      "Intermediate"
+      "WannaBe"
     ),
 
     userCreate(
@@ -106,7 +108,7 @@ async function createUsers() {
       "2022-11-20",
       "JH34@hotmail.com",
       "123456789",
-      "VIP"
+      "Member"
     ),
 
     userCreate(
@@ -117,6 +119,16 @@ async function createUsers() {
       "JH21@hotmail.com",
       "123456789",
       "VIP"
+    ),
+    userCreate(
+      4,
+      "Admin",
+      "Admin",
+      "0001-01-01",
+      "admin@admin.com",
+      "admin0000$$",
+      "VIP",
+      true
     ),
   ]);
 }
@@ -136,5 +148,6 @@ async function createComments() {
     ),
     commentCreate(5, users[1], "1992-04-12", "This is only for the members!"),
     commentCreate(6, users[2], "1992-04-12", "nuf hcum os si siht!"),
+    commentCreate(7, users[4], "0001-01-01", "I am first"),
   ]);
 }
