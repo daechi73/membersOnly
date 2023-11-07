@@ -14,5 +14,8 @@ CommentSchema.virtual("url").get(function () {
 CommentSchema.virtual("date_added_formatted").get(function () {
   return DateTime.fromJSDate(this.date_added).toLocaleString(DateTime.DATE_MED);
 });
+CommentSchema.virtual("date_added_yyyy_mm_dd").get(function () {
+  return DateTime.fromJSDate(this.date_added).toISODate(); // format 'YYYY-MM-DD'
+});
 
 module.exports = mongoose.model("Comment", CommentSchema);
