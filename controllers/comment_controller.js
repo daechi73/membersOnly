@@ -7,6 +7,6 @@ exports.comment_list = asyncHandler(async (req, res, next) => {
   res.render("index", {
     title: "Comment List",
     comments: comments,
-    user: req.user,
+    signedInUser: req.user,
   });
 });

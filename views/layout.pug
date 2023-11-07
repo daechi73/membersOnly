@@ -9,7 +9,7 @@ html
   body
     block head 
       div.navbar.navbar-expand-lg.navbar-light.bg-light
-        if user
+        if signedInUser
           div.navbar-brand Members Only Club!
            a.sign-out(href="/user/sign-out") Sign-out
         else
