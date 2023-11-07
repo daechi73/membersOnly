@@ -12,7 +12,7 @@ const UserSchema = new Schema({
     type: String,
     required: true,
     enum: ["WannaBe", "Member", "VIP"],
-    default: "Starter",
+    default: "WannaBe",
   },
   admin: { type: Boolean, default: false },
 });
