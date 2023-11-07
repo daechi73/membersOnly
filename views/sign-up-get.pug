@@ -1,0 +1,26 @@
+extends layout 
+
+block content 
+
+  h1=title
+
+  form(method="POST" action="")
+    .form-group 
+      label(for="first_name") First Name:
+      input#first_name.form-control(type="text" placeholder="first_name", name="first_name" required='true' value=(user===undefined?"":user.first_name))
+    .form-group 
+      label(for="last_name") Last Name:
+      input#last_name.form-control(type="text" placeholder="last_name", name="last_name" required='true' value=(user===undefined?"":user.last_name))
+    .form-group
+      label(for="username") User Name:
+      input#username.form-control(type="text" placeholder="username" name="username" required="true" value=(user===undefined?"":user.user_name))
+    .form-group
+      label(for="password") Password:
+      input#password.form-control(type="password" placeholder="password" name="password" required="true" )
+
+    button.btn.btn-primary(type="submite") Create Account 
+
+    if errors 
+        ul 
+          each error in errors 
+              li!=error.msg         
