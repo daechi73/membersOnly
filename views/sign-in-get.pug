@@ -6,7 +6,7 @@ block content
 
     form(method="POST" action="/user/signed-in")
         .form-group
-          label(for="user_name") User Name: 
+          label(for="username") User Name: 
           input(type="text" placeholder="Your username.." name="username" required=true)
         .form-group 
           label(for="password") Password: 
@@ -15,3 +15,7 @@ block content
     
     p 
       a(href="/user/sign-up") Sign-up
+
+    if errors 
+        li.authErrorMsg!=errors
+            
