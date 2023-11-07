@@ -14,29 +14,6 @@ exports.sign_in_get = asyncHandler(async (req, res, next) => {
   });
 });
 
-// exports.sign_in_post = asyncHandler(async (req, res, next) => {
-//   // passport.authenticate("local", (err, user, options) => {
-//   //   if (!user)
-//   //     res.render("sign-in-get", {
-//   //       title: "Sign-in",
-//   //       errors: options.message,
-//   //     });
-//   //   return {
-//   //     successRedirect: "/",
-//   //     failureRedirect: "/user/sign-in",
-//   //   };
-//   // })(req, res, next);
-
-//   passport.authenticate("local", {
-//     successRedirect: "/",
-//     failureRedirect: "/",
-//     // failureFlash: true,
-//   });
-//   // passport.authenticate("local", {
-//   //   failureFlash: "Invalid username or password.",
-//   // });
-// });
-
 exports.sign_in_post = [
   asyncHandler(async (req, res, next) => {
     passport.authenticate("local", (err, user, options) => {
@@ -56,15 +33,6 @@ exports.sign_in_post = [
     successRedirect: "/",
   }),
 ];
-
-// router.post("/login", (req, res, next) => {
-//   passport.authenticate("local",
-//      (err, user, options) => {
-//         if (!user) res.end(options.message)
-//         console.log(req.body);
-//         res.end("bla bla")
-//   })(req, res, next)
-// }
 
 exports.sign_out = asyncHandler(async (req, res, next) => {
   req.logout((err) => {
