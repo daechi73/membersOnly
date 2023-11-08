@@ -3,17 +3,6 @@ extends layout
 block content
 
   .container-index
-    if(signedInUser)
-        .comment-form 
-          .comment-form-title 
-            div Give us your review
-          form(method="POST" action="")
-            .form-group 
-                input#user.form-control(type="hidden" value=`${signedInUser._id}` name="user" required="true")
-            .form-group.textarea
-                label(for="comment") Comment:
-                textarea#comment.comment-input( name="comment" rows="4" cols="50" required="true")
-            button(type="submit") Add Comment
 
     div.welcome-msg Welcome to our club. Below are the reviews that our members have given about us !
 
