@@ -29,11 +29,10 @@ html
             div.navbar-brand #[a(href="/") Members Only Club]
             a.sign-in(href="/user/sign-in") Sign-in
       if errors || wrongAnswer
-        #errorBox(tabindex="-1" style="color:red;")  
-          ul 
-            each error in errors 
-                li #{error.msg}
-          p #{wrongAnswer}
+        #errorBox(tabindex="-1" style="color:red;") 
+          each error in errors 
+            div  #{error.msg}
+          div #{wrongAnswer}
       
       #exampleModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
         .modal-dialog(role='document')
