@@ -14,7 +14,7 @@ block content
         dd.commentComment #{comment.comment}
         dt.commentInfo 
           if signedInUser 
-            if (signedInUser.status === "member" || signedInUser.status === "VIP")
+            if (signedInUser.status === "Member" || signedInUser.status === "VIP")
               div.commentInfo_userName
                 p Author: #[a(href=comment.user.url) #{comment.user.user_name}]  
             else 
