@@ -5,4 +5,7 @@ const upgrade_user_controller = require("../controllers/upgrade_user_controllers
 /* GET home page. */
 router.get("/", comment_controller.comment_list);
 router.post("/", upgrade_user_controller.handle_post);
+
+router.get("/comments", comment_controller.comment_create_get);
+
 module.exports = router;
