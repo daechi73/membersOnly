@@ -102,7 +102,7 @@ exports.sign_up_post = [
     } else {
       console.log("here");
       await user.save();
-      res.redirect("/");
+      res.redirect("/user/sign-in");
     }
   }),
 ];
