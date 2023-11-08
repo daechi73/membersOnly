@@ -10,3 +10,9 @@ exports.comment_list = asyncHandler(async (req, res, next) => {
     signedInUser: req.user,
   });
 });
+
+exports.comment_create_get = asyncHandler(async (req, res, next) => {
+  res.render("comment-create-get", {
+    signedInUser: req.user,
+  });
+});
