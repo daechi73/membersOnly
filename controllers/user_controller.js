@@ -25,10 +25,6 @@ exports.sign_in_post = [
       } else next();
     })(req, res, next);
   }),
-  (req, res, next) => {
-    console.log("onto the next");
-    next();
-  },
   passport.authenticate("local", {
     successRedirect: "/",
   }),
