@@ -6,6 +6,9 @@ block content
 
     div.welcome-msg Welcome to our club. Below are the reviews that our members have given about us !
 
+    if signedInUser 
+      button.btn.btn-primary(type="button") #[a(href="/comments") Add a Comment]
+
     div.comment-list
       h1 User reviews:
       dl.comments
