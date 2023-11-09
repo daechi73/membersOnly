@@ -5,7 +5,7 @@ block content
         .comment-form 
             .comment-form-title 
                 div Give us your review
-                form(method="POST" action="/comment/post")
+                form(method="POST" action="")
                     .form-group 
                         input#user.form-control(type="hidden" value=`${signedInUser._id}` name="user" required="true")
                     .form-group.textarea
