@@ -16,11 +16,10 @@ html
       div.navbar.navbar-expand-lg.navbar-light.bg-light
         if signedInUser
           div.navbar-brand #[a(href="/") Members Only Club]
-          div.user-info
-            p User: #{signedInUser.user_name}
+          div.user-info #[strong User:] #{signedInUser.user_name}
             
           .user-status
-            p Status: #{signedInUser.status}
+            div.user-status-label #[strong Status:] #{signedInUser.status}
             if signedInUser.status!=="VIP"
               button.btn.btn-primary(type='button' data-toggle='modal' data-target='#exampleModal')
                 | Upgrade Status
