@@ -3,11 +3,13 @@ extends layout
 block content
 
   .container-index
-
-    div.welcome-msg Welcome to our club. Below are the reviews that our members have given about us !
+    div.container-msgs
+      div.welcome-msg Welcome to our club. Below are the reviews that our members have given about us ! 
+      div.guide Members from status "member" will be able to see the author of the comments !
+    
 
     if signedInUser 
-      button.btn.btn-primary(type="button") #[a(href="/comments") Add a Comment]
+      button.btn.btn-primary.addCommentBtn(type="button") #[a(href="/comments") Add a Comment]
 
     div.comment-list
       h1 User reviews:

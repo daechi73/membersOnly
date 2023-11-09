@@ -38,8 +38,14 @@ a {
   align-items: center;
   justify-content: center;
 }
-.welcome-msg {
-  margin: 4rem;
+.container-msgs {
+  margin: 2rem;
+}
+.addCommentBtn {
+  margin: 2rem;
+}
+.addCommentBtn > a {
+  color: white;
 }
 .textarea {
   display: flex;
@@ -59,11 +65,13 @@ a {
   display: inherit;
   flex-direction: inherit;
   align-items: inherit;
-  border: solid;
   height: 8rem;
   width: 20rem;
   padding: 1rem;
   justify-content: space-around;
+  background-color: azure;
+  border-bottom: solid;
+  border-width: 1px;
 }
 .commentComment {
   height: 60%;
