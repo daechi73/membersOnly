@@ -14,6 +14,64 @@ a {
   padding-right: 4rem;
   padding-left: 2rem;
 }
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.user-status {
+  display: flex;
+  gap: 20px;
+}
+.user-status-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .sign-in {
   text-decoration: none;
+}
+.container-index {
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.welcome-msg {
+  margin: 4rem;
+}
+.textarea {
+  display: flex;
+  flex-direction: column;
+}
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.comments {
+  display: inherit;
+  flex-direction: inherit;
+  align-items: inherit;
+}
+.comment {
+  display: inherit;
+  flex-direction: inherit;
+  align-items: inherit;
+  border: solid;
+  height: 8rem;
+  width: 20rem;
+  padding: 1rem;
+  justify-content: space-around;
+}
+.commentComment {
+  height: 60%;
+  display: inherit;
+  align-items: inherit;
+}
+.commentInfo {
+  display: inherit;
+  align-items: inherit;
+  gap: 2rem;
 }
