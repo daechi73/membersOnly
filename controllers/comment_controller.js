@@ -16,3 +16,26 @@ exports.comment_create_get = asyncHandler(async (req, res, next) => {
     signedInUser: req.user,
   });
 });
+
+exports.comment_create_post = [
+  body("comment")
+    .trim()
+    .isLength({ min: 1 })
+    .withMessage("You have to enter a comment"),
+  asyncHandler(async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.render("comment-create-get", {
+        signedInUser: req.user,
+        errors: errors,
+      });
+    } else {
+      const comment = new Comment({
+        user: req.body.user,
+        comment: req.body.comment,
+      });
+      await comment.save();
+      res.redirect("/");
+    }
+  }),
+];
